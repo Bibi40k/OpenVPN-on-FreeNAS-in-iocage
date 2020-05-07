@@ -1,0 +1,17 @@
+#!/bin/sh
+EPAIR=$(/sbin/ifconfig -l | tr " " "\n" | /usr/bin/grep epair)
+ipfw -q -f flush
+ipfw -q nat 1 config if ${EPAIR}
+ipfw -q add nat 1 all from 10.8.0.0/24 to any out via ${EPAIR}
+ipfw -q add nat 1 all from any to any in via ${EPAIR}
+
+TUN=$(/sbin/ifconfig -l | tr " " "\n" | /usr/bin/grep tun)
+ifconfig ${TUN} name tun0
+
+# Fix for:
+# OpenVPN openvpn[53987]: TUN/TAP device tun0 exists previously, keep at program end
+# OpenVPN openvpn[53987]: Cannot open TUN/TAP dev /dev/tun0: Device busy (errno=16)
+ifconfig tun create
+TUN1=$(/sbin/ifconfig -l | tr " " "\n" | /usr/bin/grep tun | tail -1)
+ifconfig ${TUN1} name tun1
+
