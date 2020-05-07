@@ -52,7 +52,7 @@ function CheckOVPNServer {
 	iocage exec "${JAIL_NAME}" service openvpn restart
 	echo
 	echo -e "OpenVPN server log file: ${COLOR_BLUE}'/var/log/openvpn.log'${COLOR_N}"
-	echo -e "${COLOR_BLUE}$(iocage exec "${JAIL_NAME}" tail -n 60 /var/log/openvpn.log)${COLOR_N}"
+	echo -e "${COLOR_BLUE}$(iocage exec "${JAIL_NAME}" tail -n 50 /var/log/openvpn.log)${COLOR_N}"
 	sleep 5
 
 }
@@ -285,12 +285,12 @@ echo
 echo "----------------------------------------------------------------------------------"
 echo
 echo "1. Install"
-echo "2. Update OpenVPN server app & Iocage Jail packages"
+echo "2. The Updater - updates jail and it's packages"
 echo "3. Add new/edit OpenVPN profile(s) and send them to e-mail box"
 echo "4. Regenerate server's keys, certs and recreate profile(s)"
-echo "5. Run cleaner"
-echo "6. BackUp all config files and send them to e-mail box"
-echo "7. OpenVPN server full checks"
+echo "5. The Cleaner - keeps .cfg file and removes jail and related files"
+echo "6. The Keeper - backup & sends config to email"
+echo "7. The Watcher - shows server configs & last 50 lines of the log"
 echo "8. Edit settings"
 echo "9. Exit"
 echo
