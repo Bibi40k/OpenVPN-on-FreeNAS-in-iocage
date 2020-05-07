@@ -15,7 +15,7 @@
 - mix all certs and keys together with client(s) config files and create a single .ovpn file useful for mobile also.
 - sends email with client(s) config file.
 
-![script-menu]([https://github.com/Bibi40k/OpenVPN-on-FreeNAS-in-iocage/blob/master/src/script-menu.jpg])
+![script-menu](https://github.com/Bibi40k/OpenVPN-on-FreeNAS-in-iocage/blob/master/src/script-menu.jpg)
 
 # Recommended OpenVPN Clients:
 Windows: [OpenVPN](https://openvpn.net/community-downloads/) \
