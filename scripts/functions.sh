@@ -305,14 +305,14 @@ read -p ": " option
 				read -p "[y/n]: " answer
 					case $answer in
 						y)
-							InstallOpenVPN
+							InstallOpenVPN | tee $FLOG
 						;;
 						n|*)
 							StartUpScreen
 						;;
 					esac
 			else
-				InstallOpenVPN
+				InstallOpenVPN | tee $FLOG
 			fi
 		;;
 		2)
