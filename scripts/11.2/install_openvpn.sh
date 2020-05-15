@@ -97,5 +97,4 @@ function InstallOpenVPN {
 	echo
 	CheckOVPNServer # Check if server is up and running; showing last lines from log.
 
-} 2>&1 2>$FLOG
-
+} 2>$FLOG 2>&1
