@@ -267,7 +267,7 @@ echo -e "OpenVPN external port: [ $EXT_PORT_4SCREEN ]"
 echo
 echo -e "Active autodetected vars:"
 echo -e "Gateway IP: [ ${COLOR_BLUE}$AUTO_GW_IP${COLOR_N} ]"
-echo -e "External IP: [ ${COLOR_BLUE}$AUTO_EXT_IP${COLOR_N} ]"
+echo -e "External IP/DDNS: [ ${COLOR_BLUE}$EXT_IP_4SCREEN${COLOR_N} ]"
 echo
 echo -e "Active settings for certificates and keys:"
 echo -e "Country: [ $COUNTRY_4SCREEN ]"
