@@ -11,7 +11,7 @@ EOM
 echo
 
 # Add 'EXT_IP' variable to let usage of DDNS
-grep -q 'EXT_IP' ${FVARS} || sed -i "" "/JAIL_NAME/a\\
+grep -q 'EXT_IP' ${FVARS} || sed -i "" "/JAIL_NAME/r 
 
 # External IP/DDNS that you'll use to connect
 # Default: your-IP
