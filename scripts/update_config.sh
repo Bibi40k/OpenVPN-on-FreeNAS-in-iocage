@@ -12,13 +12,11 @@ echo
 
 # Add 'EXT_IP' variable to let usage of DDNS
 EXT_IP_TEXT="
-
 # External IP/DDNS that you'll use to connect
 # Default: your-IP
 EXT_IP=\"\"
-
 "
 echo "${EXT_IP_TEXT}" > TMP_EXT_IP_TEXT
 
-grep -q 'EXT_IP' ${FVARS} || sed "/JAIL_NAME/r ${FVARS}" ${TMP_EXT_IP_TEXT}
+grep -q 'EXT_IP' ${FVARS} || sed "/JAIL_NAME/r ${TMP_EXT_IP_TEXT}" ${FVARS}
 
