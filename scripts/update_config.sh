@@ -20,5 +20,5 @@ EXT_IP=\"\"
 "
 echo "${EXT_IP_TEXT}" > TMP_EXT_IP_TEXT
 
-grep -q 'EXT_IP' ${FVARS} || sed -i "" "/JAIL_NAME/r ${TMP_EXT_IP_TEXT}" ${FVARS}
+grep -q 'EXT_IP' ${FVARS} || sed "/JAIL_NAME/r ${FVARS}" ${TMP_EXT_IP_TEXT}
 
