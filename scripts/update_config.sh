@@ -15,10 +15,10 @@ EXT_IP_TEXT="
 
 # External IP/DDNS that you'll use to connect
 # Default: your-IP
-EXT_IP=""
+EXT_IP=\"\"
 
 "
-echo ${EXT_IP_TEXT} > TMP_EXT_IP_TEXT
+echo "${EXT_IP_TEXT}" > TMP_EXT_IP_TEXT
 
 grep -q 'EXT_IP' ${FVARS} || sed -i "" "/JAIL_NAME/r ${TMP_EXT_IP_TEXT}" ${FVARS}
 
